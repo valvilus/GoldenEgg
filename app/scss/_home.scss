@@ -1,0 +1,137 @@
+.home {
+  min-height: 800px;
+  outline: 1px solid red;
+  position: relative;
+  &__img,
+  &__video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+  }
+  &__container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+  }
+  &::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.7) 100%),
+  }
+  &__container-center {
+    @include flex(space-between, flex-start);
+    margin-top: 175px;
+  }
+  &__text {
+    text-align: center;
+    h6{
+      color: $white;
+      font-size: $text;
+    }
+    h1{
+      color: $yellow;
+      font-family: $kurale;
+      text-transform: uppercase;
+      font-size: 72px;
+      font-weight: 400;
+      margin-top: 25px;
+      &:after{
+        @include line;
+      }
+    }
+  }
+  &__btns {
+    margin-bottom: 80px;
+    a{
+      display: inline-block;
+      width: 200px;
+      height: 60px;
+      line-height: 60px;
+      color: $white;
+      font-size: 12px;
+      border-radius: 5px;
+      font-weight: 700;
+      transition: .3s;
+      text-transform: uppercase;
+      border: 1px solid $white-opacity;
+      margin: 0 20px 20px;
+      &:hover{
+        background-color: $yellow;
+      }
+    }
+  }
+}
+.btn-order{
+  background: $yellow;
+  border: none !important; 
+  &:hover{
+    background: darken($yellow, 10%) !important;
+  }
+}
+
+.top-menu {
+  &__list {
+    @include flex(center, center)
+  }
+  &__item {
+    margin: 0 5px;
+    a{
+      text-transform: uppercase;
+      color: $white;
+      font-weight: 700;
+      font-size: 12px;
+      display: block;
+      padding: 40px 25px;
+      transition: .3s;
+      border-top: 5px solid transparent;
+      &:hover{
+        color: $yellow;
+        border-top: 5px solid $yellow;
+      }
+    }
+  }
+}
+.logo {
+  margin: 0 60px;
+  img{
+    position: relative;
+    top: 15px;
+  }
+}
+.time-work {
+  font-weight: 700;
+  font-size: 12px;
+  color: $white;
+  width: 60px;
+  margin-top: 60px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+.arrow {
+  &__about {
+    display: block;
+    width: 62px;
+    height: 62px;
+    margin: $mc;
+  }
+}
+.socials {
+  width: 62px;
+  margin-top: 40px;
+  a{
+    display: block;
+    height: 62px;
+    border-radius: 50%;
+    transition: .3s;
+    margin-bottom: 20px;
+    &:hover{
+      background-color: $yellow;
+    }
+  }
+}
